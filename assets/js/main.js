@@ -2,8 +2,14 @@
 const navBar = document.querySelector("#navbar");
 const requiredItems = document.querySelectorAll(".required");
 const errorText = document.querySelector("#error");
-const submitButton = document.querySelector("#submit-button");
+// const submitButton = document.querySelector("#submit-button");
+const submitButton = document.querySelector("#form");
 // requiredItems.forEach(requiredCheck)
+
+// document.querySelector('form').addEventListener('submit', function(event) {
+//   event.preventDefault(); // جلوگیری از رفرش صفحه
+//   // کدهای ارسال فرم
+// });
 
 // Function Definition
 function openHamburgerMenu() {
@@ -17,15 +23,16 @@ function closeHamburgerMenu() {
 }
 
 
-submitButton.addEventListener('click', function() {
+submitButton.addEventListener('submit', function(event) {
     for (let i = 0; i < requiredItems.length; i++) {
-        console.log("inside for");
+        // console.log("inside for");
         if (requiredItems[i].value == "") {
         //   console.log("inside if");
           requiredItems[i].nextElementSibling.innerHTML =
-            "* Value must not be empty.";
+            "* <b>" + requiredItems[i].previousElementSibling.innerText + "</b> must not be empty.";
           requiredItems[i].nextElementSibling.classList.remove("-translate-y-full");
           requiredItems[i].nextElementSibling.classList.add("-translate-y-0");
+          event.preventDefault();
         } else {
         //   requiredItems[i].nextElementSibling.innerHTML = "";
           requiredItems[i].nextElementSibling.classList.add("-translate-y-full");
@@ -54,7 +61,7 @@ function checkRequired(item, index) {
     }
   }
 }
-
+*/
 function checkRequired2(item, index) {
   console.log("inside function");
   errorText.innerHTML = "";
@@ -72,4 +79,3 @@ function checkRequired2(item, index) {
     }
   }
 }
-*/

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body class="bg-mainBg font-Poppins">
-    <section class="lg:flex lg:items-center lg:px-24">
+    <section class="lg:flex lg:items-center lg:px-24 relative z-50">
       <!-- HEADER Section -->
       <header
         class="flex justify-between top-0 items-center px-5 py-7 fixed bg-mainBg w-full shadow z-40 lg:sticky lg:shadow-none"
@@ -304,14 +304,14 @@
         </div>
 
         <form
-          action="#"
-          method="post"
-          
-          class="text-form mx-5 relative flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:grid-rows-[13%_13%_15%_15%_15%]"
+          action=""
+          method="get"
+          id="form"
+          class="text-form mx-5 relative flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:grid-rows-[13%_13%_15%_15%_15%] z-30"
         >
           <!-- First Name -->
           <div class="border-b py-2 font-medium relative">
-            <label for="first-name" class="text-[.75rem]">First Name</label>
+            <label for="first-name" class="text-[.75rem] required-label">First Name</label>
             <input
               name="first-name"
               id="first-name"
@@ -319,12 +319,13 @@
               class="required focus:outline-none px-1 w-full text-sm cursor-pointer relative z-20"
               placeholder="John"
             />
-            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-xs transition-transform transform -translate-y-full duration-300 font-medium"></span><div class="absolute bottom-0 left-0 w-full h-1/2 bg-white z-10 "></div>
+            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-sm transition-transform transform -translate-y-full duration-300 font-medium"></span>
+            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-white z-10 "></div>
           </div>
 
           <!-- Last Name -->
           <div class="border-b py-2 font-medium relative">
-            <label for="last-name" class="text-[.75rem]">Last Name</label>
+            <label for="last-name" class="text-[.75rem] required-label">Last Name</label>
             <input
               name="last-name"
               id="last-name"
@@ -332,32 +333,33 @@
               class="required focus:outline-none px-1 w-full text-sm cursor-pointer relative z-20"
               placeholder="Doe"
             />
-            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-xs transition-transform transform -translate-y-full duration-300 font-medium"></span><div class="absolute bottom-0 left-0 w-full h-1/2 bg-white z-10 "></div>
+            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-sm transition-transform transform -translate-y-full duration-300 font-medium"></span>
+            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-white z-10 "></div>
           </div>
 
           <!-- Email Address -->
           <div class="border-b py-2 font-medium relative">
-            <label for="email" class="text-[.75rem]">Email</label>
+            <label for="email" class="text-[.75rem] required-label">Email</label>
             <input
               name="email"
               id="email"
               type="email"
               class="required focus:outline-none px-1 w-full text-sm cursor-pointer relative z-20"
             />
-            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-xs transition-transform transform -translate-y-full duration-300 font-medium"></span>
+            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-sm transition-transform transform -translate-y-full duration-300 font-medium"></span>
             <div class="absolute bottom-0 left-0 w-full h-1/2 bg-white z-10 "></div>
           </div>
 
           <!-- Phone Number -->
           <div class="border-b py-2 font-medium relative">
-            <label for="phone-number" class="text-[.75rem]">Phone Number</label>
+            <label for="phone-number" class="text-[.75rem] required-label">Phone Number</label>
             <input
               name="phone-number"
               id="phone-number"
               type="number"
               class="required focus:outline-none px-1 w-full no-spin-buttons text-sm cursor-pointer relative z-20"
             />
-            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-xs transition-transform transform -translate-y-full duration-300 font-medium"></span>
+            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-sm transition-transform transform -translate-y-full duration-300 font-medium"></span>
             <div class="absolute bottom-0 left-0 w-full h-1/2 bg-white z-10 "></div>
           </div>
 
@@ -425,7 +427,7 @@
           <div
             class="flex flex-col justify-between border-b py-2 lg:col-span-2 relative"
           >
-            <fieldset for="comment" class="text-[.75rem] mb-2.5">
+            <fieldset for="comment" class="text-[.75rem] mb-2.5 required-label">
               Comment
             </fieldset>
             <textarea
@@ -435,16 +437,16 @@
               class="required focus:outline-none text-sm cursor-pointer relative z-20"
               placeholder="Write your message.."
             ></textarea>
-            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-xs transition-transform transform -translate-y-full duration-300 font-medium"></span>
+            <span class="absolute text-red-500 left-0 top-full text-xs lg:text-sm transition-transform transform -translate-y-full duration-300 font-medium"></span>
             <div class="absolute bottom-0 left-0 w-full h-1/2 bg-white z-10 "></div>
           </div>
 
           <!-- Send Button -->
           <div class="relative lg:col-start-2 lg:flex lg:flex-col lg:items-end">
             <button
-              type="button"
+              type="submit"
               class="bg-secondary text-white w-full py-2.5 px-8 rounded font-medium text-[13px] lg:w-3/4 relative z-10"
-              onclick="checkRequired(), checkRequired2()"
+              
               id="submit-button"
             >
               Send Message
