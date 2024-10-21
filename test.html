@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div#box {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        animation-duration: 1s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        z-index: 1;
+        top: 0;
+        left: 0;
+      }
+
+      div.main {
+        position: relative;
+      }
+
+      div.top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: yellowgreen;
+        width: 100px;
+        height: 50px;
+        z-index: 2;
+      }
+
+      .animat1 {
+        /* animation-name: example1; */
+        transform: translateY(120%);
+      }
+
+      .animat2 {
+        /* animation-name: example2; */
+        transform: translateY(0%);
+      }
+
+      @keyframes example1 {
+        0% {
+          left: 0px;
+          top: 0px;
+        }
+        100% {
+          left: 0px;
+          top: 60px;
+        }
+      }
+
+      @keyframes example2 {
+        100% {
+          left: 0px;
+          top: 0px;
+        }
+        0% {
+          left: 0px;
+          top: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Animation</h1>
+
+    <p>
+      The animation-direction property specifies whether an animation should be
+      played forwards, backwards or in alternate cycles. The following example
+      will run the animation in reverse direction (backwards):
+    </p>
+
+    <button id="button" onclick="changeClass()">Click Me!</button>
+
+    <p></p>
+
+    <div class="main">
+      <div class="top"></div>
+      <div class="" id="box"></div>
+    </div>
+    <script>
+      const box = document.querySelector("#box");
+      const button = document.querySelector("#button");
+      button.addEventListener("click", function () {
+        if (box.classList.value !== "animat1") {
+          box.classList.remove("animat2");
+          box.classList.add("animat1");
+        } else {
+          box.classList.remove("animat1");
+          box.classList.add("animat2");
+        }
+      });
+    </script>
+  </body>
+</html>
